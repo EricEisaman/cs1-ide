@@ -77,4 +77,17 @@ var addMenuItem = function( title, name, text='default' ) {
 //addMenuItem( 'Lessons', 'lessons' );
 //addMenuItem( 'Code Editor', 'code-editor', 'code' );
 
+let projectInput = document.querySelector('#project');
+projectInput.addEventListener('keydown',e=>{
+  if(e.which==13){
+    fetch(`https://${projectInput.value}.glitch.me/ide-get-client-config`)
+    .then(res=>{
+      return res.json();
+    })
+    .then(data=>{editor.setValue(js_beautify(JSON.stringify(data)))})
+    .catch(err=>{console.log(err)})
+    
+    $('#overlay').hide();
+  }
+});
 

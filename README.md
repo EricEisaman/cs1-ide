@@ -1,2 +1,2 @@
-# Golden Layout
+# CS1 IDE
 ___

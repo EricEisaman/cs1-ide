@@ -13,7 +13,7 @@ export const lessons = state=>{
   return `
   
   
-  <select class="lesson-select">
+  <select id="lesson-select">
     <option value="client-config">Client Config</option>
     <option value="hello-component">Hello Component</option>
   </select>
@@ -21,9 +21,9 @@ export const lessons = state=>{
   
   <script>
     
-    let lesson = document.querySelector('.lesson');
+    let lesson = document.querySelector('#lesson');
     lesson.innerHTML = IDE.clientConfigLessonTemplate();
-    let select = document.querySelector('.lesson-select');
+    let select = document.querySelector('#lesson-select');
     
     select.addEventListener('change',e=>{
      
@@ -45,7 +45,7 @@ export const lessons = state=>{
    
   </script>
   
-  <div class="lesson"></div>
+  <div id="lesson"></div>
   
   
   

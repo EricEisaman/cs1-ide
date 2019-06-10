@@ -1,14 +1,17 @@
 'use strict';
 
-import {simpleHeading, colorHeading} from './templates.mjs';
+window.IDE = {};
 
 import {codeEditor} from './components/code-editor/code-editor.mjs';
 
 import {lessons} from './components/lessons/lessons.mjs';
 
+
+
+
 var config = {
     content: [{
-        type: 'row',
+        type: 'column',
         content: [{
             title: 'Code Editor',
             type:'component',
@@ -19,7 +22,7 @@ var config = {
         
         
          {
-        type: 'row',
+        type: 'column',
         content: [{
             title: 'Lessons',
             type:'component',
@@ -40,15 +43,6 @@ var config = {
 var myLayout = new window.GoldenLayout( config, $('#layoutContainer') );
 
 
-
-
-myLayout.registerComponent( 'simple', function( container, state ){
-    container.getElement().html(simpleHeading(state));
-});
-
-myLayout.registerComponent( 'color', function( container, state ){
-    container.getElement().html(colorHeading(state));
-});
 
 myLayout.registerComponent( 'code-editor', function( container, state ){
     container.getElement().html(codeEditor(state));
@@ -84,7 +78,10 @@ projectInput.addEventListener('keydown',e=>{
     .then(res=>{
       return res.json();
     })
-    .then(data=>{editor.setValue(js_beautify(JSON.stringify(data)))})
+    .then(data=>{
+      IDE.config = js_beautify(JSON.stringify(data));
+      editor.setValue(IDE.config)
+    })
     .catch(err=>{console.log(err)})
     
     $('#overlay').hide();

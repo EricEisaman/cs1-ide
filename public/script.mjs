@@ -1,6 +1,8 @@
 'use strict';
 
-window.IDE = {};
+let IDE = window.IDE = {};
+
+IDE.socket;
 
 import {codeEditor} from './components/code-editor/code-editor.mjs';
 
@@ -74,13 +76,18 @@ var addMenuItem = function( title, name, text='default' ) {
 let projectInput = document.querySelector('#project');
 projectInput.addEventListener('keydown',e=>{
   if(e.which==13){
-    fetch(`https://${projectInput.value}.glitch.me/ide-get-client-config`)
+    IDE.projectURL = `https://${projectInput.value}.glitch.me`;
+    fetch(IDE.projectURL + '/ide-get-client-config')
     .then(res=>{
       return res.json();
     })
     .then(data=>{
       IDE.config = js_beautify(JSON.stringify(data));
-      editor.setValue(IDE.config)
+      editor.setValue(IDE.config);
+      IDE.socket = io(IDE.projectURL);
+      IDE.socket.on('connect',data=>{
+        console.log(`Socket opened to ${IDE.projectURL}.`);
+      });
     })
     .catch(err=>{console.log(err)})
     

@@ -21,11 +21,11 @@ export const aframeComponentCodeTemplate = props=>{ return `AFRAME.registerCompo
 // LESSON TEMPLATES
 
 export const clientConfigLessonTemplate = props=>{ return `
-CLIENT CONFIG LESSON<p>Under construction</p>
+<div class="content">CLIENT CONFIG LESSON<p>Under construction</p></div>
 `}
 
 export const helloComponentLessonTemplate = props=>{ return `
-HELLO COMPONENT LESSON<p>Under construction</p>
+<div class="content">HELLO COMPONENT LESSON<p>Under construction</p></div>
 `}
 
 

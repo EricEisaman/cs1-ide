@@ -74,8 +74,10 @@ var addMenuItem = function( title, name, text='default' ) {
 //addMenuItem( 'Code Editor', 'code-editor', 'code' );
 
 let projectInput = document.querySelector('#project');
-projectInput.addEventListener('keydown',e=>{
-  if(e.which==13){
+let adminkeyInput = document.querySelector('#adminkey');
+adminkeyInput.addEventListener('keydown',e=>{
+  if(e.which==13 && (projectInput.value.length>0)  ){
+  
     IDE.projectURL = `https://${projectInput.value}.glitch.me`;
     fetch(IDE.projectURL + '/ide-get-client-config')
     .then(res=>{
@@ -84,14 +86,22 @@ projectInput.addEventListener('keydown',e=>{
     .then(data=>{
       IDE.config = js_beautify(JSON.stringify(data));
       editor.setValue(IDE.config);
-      IDE.socket = io(IDE.projectURL);
-      IDE.socket.on('connect',data=>{
-        console.log(`Socket opened to ${IDE.projectURL}.`);
-      });
     })
     .catch(err=>{console.log(err)})
     
-    $('#overlay').hide();
+    IDE.socket = io(IDE.projectURL);
+    IDE.socket.on('connect',data=>{
+      console.log(`Socket opened to ${IDE.projectURL}.`);
+    });
+    IDE.socket.on('msg',msg=>{
+      console.log(msg);
+    });
+    IDE.socket.emit('admin-key',adminkeyInput.value,d=>{
+      if(d=='success'){
+        $('#overlay').hide();
+      } 
+    });
+        
   }
 });
 

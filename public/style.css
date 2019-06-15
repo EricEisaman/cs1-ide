@@ -9,6 +9,18 @@ h2{
   color:#f00;
 }
 
+.save-btn{
+  display:inline-block;
+  transform:scale(0.7);
+  margin-top: -3px;
+  filter: invert(75%);
+  float: left;
+}
+.save-btn:hover{
+  cursor: pointer;
+  filter: invert(0%);
+}
+
 #lesson{
   color:#fff;
   margin-top: 10px;

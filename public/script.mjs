@@ -54,7 +54,7 @@ myLayout.registerComponent( 'lessons', function( container, state ){
     container.getElement().html(lessons(state));
 });
 
-myLayout.init();
+//myLayout.init();
 
 var addMenuItem = function( title, name, text='default' ) {
     var element = $( '<li>' + title + '</li>' );
@@ -72,6 +72,10 @@ var addMenuItem = function( title, name, text='default' ) {
 
 //addMenuItem( 'Lessons', 'lessons' );
 //addMenuItem( 'Code Editor', 'code-editor', 'code' );
+
+
+
+// LOGIN
 
 let projectInput = document.querySelector('#project');
 let adminkeyInput = document.querySelector('#adminkey');
@@ -104,4 +108,33 @@ adminkeyInput.addEventListener('keydown',e=>{
         
   }
 });
+
+
+// Save Button
+
+myLayout.on( 'stackCreated', function( stack ){
+    
+    /*
+     * Accessing the DOM element that contains the popout, maximise and * close icon
+     */
+    //console.log('ADDING SAVE BTN');
+    //console.log(stack);
+    if(stack.contentItems[0].componentName=="code-editor")
+      stack.header.controlsContainer.prepend( "<div class='save-btn'>💾</div>" );
+
+    /*
+     * Listening for activeContentItemChanged. This happens initially
+     * when the stack is created and everytime the user clicks a tab
+     */
+    stack.on( 'activeContentItemChanged', function( contentItem ){
+        // interact with the contentItem
+    });
+
+    /*
+     * Accessing the container and updating its state
+     */
+    //stack.getActiveContentItem().container.extendState({color: '#faa'});
+});
+
+myLayout.init();
 

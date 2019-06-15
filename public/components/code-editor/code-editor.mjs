@@ -1,5 +1,5 @@
-import codemirror from './codemirror.mjs';
-import jsMode from './js-mode.mjs';
+import codemirror from '../../../lib/codemirror/codemirror.mjs';
+import jsMode from '../../../lib/codemirror/js-mode.mjs';
 
 
 export const codeEditor = state=>{

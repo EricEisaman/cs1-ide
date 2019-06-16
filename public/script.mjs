@@ -12,31 +12,34 @@ import {lessons} from './components/lessons/lessons.mjs';
 
 
 var config = {
-    content: [{
-        type: 'column',
-        content: [{
-            title: 'Code Editor',
-            type:'component',
-            componentName: 'code-editor',
-            componentState: { text: 'CS1 IDE Code Editor' }
-        },
+    content: [
+      {
+        type: 'row',
         
+        content: [
         
+          {
+              type: 'row',
+              content: [{
+                  title: 'Lessons',
+                  isClosable: false,
+                  type:'component',
+                  componentName: 'lessons',
+                  componentState: { text: 'CS1 Lessons' }
+              }]
+          },
         
-         {
-        type: 'column',
-        content: [{
-            title: 'Lessons',
-            type:'component',
-            componentName: 'lessons',
-            componentState: { text: 'CS1 Lessons' }
-        }]
-        }
-        
-        
-        
-        
-        
+          {   
+              type: 'row',
+              content: [{
+                title: 'Code Editor',
+                isClosable: false,
+                type:'component',
+                componentName: 'code-editor',
+                componentState: { text: 'CS1 IDE Code Editor' }
+              }]
+          }
+                
         ]
     }]
         
@@ -48,10 +51,14 @@ var myLayout = new window.GoldenLayout( config, $('#layoutContainer') );
 
 myLayout.registerComponent( 'code-editor', function( container, state ){
     container.getElement().html(codeEditor(state));
+    let layoutSettings = container.layoutManager.config.settings;
+    layoutSettings.showPopoutIcon = false;
 });
 
 myLayout.registerComponent( 'lessons', function( container, state ){
     container.getElement().html(lessons(state));
+    let layoutSettings = container.layoutManager.config.settings;
+    layoutSettings.showPopoutIcon = false;
 });
 
 //myLayout.init();

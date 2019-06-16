@@ -14,8 +14,12 @@ export const codeEditor = state=>{
    var code = $(".codemirror-textarea")[0]
     var editor = CodeMirror.fromTextArea(code,{
     	lineNumbers :true,
+      lineWrapping:true,
     	mode:"javascript"
     });
+    editor.on('keyup',e=>{
+      $('.save-btn').css('filter','invert(0%)');
+    })
     //console.log(${JSON.stringify(state)});
     editor.setSize('100%','100%');
   </script>

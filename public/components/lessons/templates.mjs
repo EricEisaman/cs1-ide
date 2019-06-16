@@ -24,8 +24,8 @@ export const clientConfigLessonTemplate = props=>{ return `
 <div class="content">CLIENT CONFIG LESSON<p>Under construction</p></div>
 `}
 
-export const helloComponentLessonTemplate = props=>{ return `
-<div class="content">HELLO COMPONENT LESSON<p>Under construction</p></div>
+export const myComponentsLessonTemplate = props=>{ return `
+<div class="content">MY COMPONENTS LESSON<p>Under construction</p></div>
 `}
 
 

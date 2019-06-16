@@ -1,21 +1,32 @@
 import {aframeComponentCodeTemplate,
         clientConfigLessonTemplate,
-        helloComponentLessonTemplate} from './templates.mjs';
+        myComponentsLessonTemplate} from './templates.mjs';
 
 
 
 export const lessons = state=>{
 
-  IDE.aframeComponentCodeTemplate = aframeComponentCodeTemplate;
+  IDE.getSrc = function(path){
+    IDE.socket.emit('get-src',path,d=>{
+      if(d.status=='success'){
+        console.log(d.data);
+        editor.setValue(d.data);
+      }else{
+        console.error('ERROR RETRIEVING MY COMPONENTS FROM REMOTE SERVER');
+        console.log(d.data);
+        editor.setValue(d.data);
+      }
+    });
+  }
   IDE.clientConfigLessonTemplate = clientConfigLessonTemplate;
-  IDE.helloComponentLessonTemplate = helloComponentLessonTemplate;
+  IDE.myComponentsLessonTemplate = myComponentsLessonTemplate;
 
   return `
   
   
   <select id="lesson-select">
     <option value="client-config">Client Config</option>
-    <option value="hello-component">Hello Component</option>
+    <option value="my-components">My Components</option>
   </select>
   
   
@@ -31,11 +42,13 @@ export const lessons = state=>{
      
        case 'client-config':
          lesson.innerHTML = IDE.clientConfigLessonTemplate();
-         editor.setValue(IDE.config);
+         IDE.getSrc('./src/core/config/client-config.json');
+         IDE.currentLesson = 'client-config';
          break;
-       case 'hello-component':
-         lesson.innerHTML = IDE.helloComponentLessonTemplate();
-         editor.setValue(IDE.aframeComponentCodeTemplate());
+       case 'my-components':
+         lesson.innerHTML = IDE.myComponentsLessonTemplate();
+         IDE.getSrc('./src/core/components/my-components.js');
+         IDE.currentLesson = 'my-components';
          break;
      
      }

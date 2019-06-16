@@ -1,6 +1,6 @@
 'use strict';
 
-let IDE = window.IDE = {};
+let IDE = window.IDE = {building:false,currentLesson:'client-config'};
 
 IDE.socket;
 
@@ -109,8 +109,47 @@ adminkeyInput.addEventListener('keydown',e=>{
   }
 });
 
+// IDE Functions
+IDE.save = function(){
+            console.log('calling remote save');
+            let path;
+            switch(IDE.currentLesson){
+              case 'client-config':
+                path = './src/core/config/client-config.json';
+                break;
+              case 'my-components':
+                path = './src/core/components/my-components.js';
+                break;
+            }
+            IDE.socket.emit('save',{path:path,txt:editor.getValue()},res=>{
+              if(res=='success'){
+                $('.save-btn').css('filter','invert(100%)');
+                $('.build-btn').css('filter','invert(0%)');
+              }else{
+                alert('error saving to remote server');
+              }
+            });
+          }
+IDE.build = function(){
+            if(IDE.building)return;
+            console.log('calling remote build');
+            IDE.building = true;
+            $('.build-btn').html('building remote project');
+            $('.save-btn').hide();
+            IDE.socket.emit('build',res=>{
+              if(res=='success'){
+                $('.build-btn').html('🔧');
+                $('.save-btn').show();
+                $('.build-btn').css('filter','invert(100%)');
+              }else{
+                alert('error with remote build');
+              }
+            });
+          }
 
-// Save Button
+
+
+// Editor Buttons
 
 myLayout.on( 'stackCreated', function( stack ){
     
@@ -119,15 +158,17 @@ myLayout.on( 'stackCreated', function( stack ){
      */
     //console.log('ADDING SAVE BTN');
     //console.log(stack);
-    if(stack.contentItems[0].componentName=="code-editor")
-      stack.header.controlsContainer.prepend( "<div class='save-btn'>💾</div>" );
-
+  
     /*
      * Listening for activeContentItemChanged. This happens initially
      * when the stack is created and everytime the user clicks a tab
      */
     stack.on( 'activeContentItemChanged', function( contentItem ){
         // interact with the contentItem
+        if(stack.contentItems && stack.contentItems[0] && stack.contentItems[0].componentName=="code-editor"){
+          
+          stack.header.controlsContainer.prepend( "<div class='build-btn' onclick='IDE.build()'>🔧</div><div class='save-btn' onclick='IDE.save()'>💾</div>" );
+        }
     });
 
     /*

@@ -13,12 +13,23 @@ h2{
   display:inline-block;
   transform:scale(0.7);
   margin-top: -3px;
-  filter: invert(75%);
+  filter: invert(100%);
   float: left;
 }
 .save-btn:hover{
   cursor: pointer;
-  filter: invert(0%);
+}
+
+.build-btn{
+  display:inline-block;
+  transform:scale(0.7);
+  margin-top: -3px;
+  filter: invert(100%);
+  float: left;
+  color:yellow;
+}
+.build-btn:hover{
+  cursor: pointer;
 }
 
 #lesson{

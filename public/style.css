@@ -6,7 +6,7 @@ h2{
 }
 
 .red{
-  color:#f00;
+  color:#f00 !important;
 }
 
 iframe{

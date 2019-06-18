@@ -7,12 +7,12 @@ export const codeEditor = state=>{
   return `
   
   
-  <textarea class="codemirror-textarea"></textarea>
+  <textarea class="editor-textarea"></textarea>
   
   
   <script>
-   var code = $(".codemirror-textarea")[0]
-    var editor = CodeMirror.fromTextArea(code,{
+   var codeTA = $(".editor-textarea")[0]
+    var editor = CodeMirror.fromTextArea(codeTA,{
     	lineNumbers :true,
       lineWrapping:true,
     	mode:"javascript"

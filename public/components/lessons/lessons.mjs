@@ -9,11 +9,9 @@ export const lessons = state=>{
   IDE.getSrc = function(path){
     IDE.socket.emit('get-src',path,d=>{
       if(d.status=='success'){
-        console.log(d.data);
         editor.setValue(d.data);
       }else{
         console.error('ERROR RETRIEVING MY COMPONENTS FROM REMOTE SERVER');
-        console.log(d.data);
         editor.setValue(d.data);
       }
     });

@@ -5,6 +5,7 @@ let IDE = window.IDE = {building:false,currentLesson:'client-config'};
 IDE.socket;
 
 import {codeEditor} from './components/code-editor/code-editor.mjs';
+import {log} from './components/log/log.mjs';
 
 import {lessons} from './components/lessons/lessons.mjs';
 
@@ -30,13 +31,20 @@ var config = {
           },
         
           {   
-              type: 'row',
+              type: 'column',
               content: [{
                 title: 'Code Editor',
                 isClosable: false,
                 type:'component',
                 componentName: 'code-editor',
                 componentState: { text: 'CS1 IDE Code Editor' }
+              },
+              {
+                title: 'Log',
+                isClosable: false,
+                type:'component',
+                componentName: 'log',
+                componentState: { text: 'CS1 IDE Log' }
               }]
           }
                 
@@ -51,6 +59,12 @@ var myLayout = new window.GoldenLayout( config, $('#layoutContainer') );
 
 myLayout.registerComponent( 'code-editor', function( container, state ){
     container.getElement().html(codeEditor(state));
+    let layoutSettings = container.layoutManager.config.settings;
+    layoutSettings.showPopoutIcon = false;
+});
+
+myLayout.registerComponent( 'log', function( container, state ){
+    container.getElement().html(log(state));
     let layoutSettings = container.layoutManager.config.settings;
     layoutSettings.showPopoutIcon = false;
 });
@@ -112,6 +126,16 @@ adminkeyInput.addEventListener('keydown',e=>{
         $('#overlay').hide();
       } 
     });
+    IDE.socket.on('log',data=>{
+       let el = document.querySelector('.cm-s-dracula');
+       if(data.includes('failed')){
+         el.setAttribute('style',"color:red !important");
+       }else{
+         el.setAttribute('style',"color:#f8f8f2 !important");
+       }
+       window.log.setValue(data);
+       window.log.setSize('100%','100%');
+    });
         
   }
 });
@@ -144,12 +168,14 @@ IDE.build = function(){
             $('.build-btn').html('building remote project');
             $('.save-btn').hide();
             IDE.socket.emit('build',res=>{
+              IDE.building = false;
+              $('.build-btn').html('🔧');
+              $('.save-btn').show();
+              $('.build-btn').css('filter','invert(100%)');
               if(res=='success'){
-                $('.build-btn').html('🔧');
-                $('.save-btn').show();
-                $('.build-btn').css('filter','invert(100%)');
+                console.log('successful remote build');
               }else{
-                alert('error with remote build');
+                console.log('error with remote build');
               }
             });
           }
@@ -183,6 +209,9 @@ myLayout.on( 'stackCreated', function( stack ){
      */
     //stack.getActiveContentItem().container.extendState({color: '#faa'});
 });
+
+
+
 
 myLayout.init();
 

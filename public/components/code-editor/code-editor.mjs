@@ -15,7 +15,8 @@ export const codeEditor = state=>{
     var editor = CodeMirror.fromTextArea(codeTA,{
     	lineNumbers :true,
       lineWrapping:true,
-    	mode:"javascript"
+    	mode:"javascript",
+      theme:"dracula"
     });
     editor.on('keyup',e=>{
       $('.save-btn').css('filter','invert(0%)');

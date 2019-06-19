@@ -1,49 +1,20 @@
-// CODE TEMPLATES
+export const templates = {
 
-export const aframeComponentCodeTemplate = props=>{ return `AFRAME.registerComponent('log', {
-  schema: {
-    msg: {type: 'string', default: 'Hello, World!'}
-  },
-
-  init: function () {
-    var self = this;
-    
-  },
-
-  update: function (oldData) {
-    
-  }
-});`}
+"Client Config": {
+  lessonURL: 'https://en.wikipedia.org/wiki/Configuration_file',
+  quizURL: 'https://docs.google.com/forms/d/e/1FAIpQLSfbDUh1E2XsvBYcNUxTHvAykWd8x-fn5g5Srjco9NmgcTyNmA/viewform?embedded=true',
+  codeTemplate:false,
+  saveTarget:'./src/core/config/client-config.json'
+},
+"Components": {
+  lessonURL: 'https://aframe.io/docs/0.9.0/core/component.html',
+  quizURL: 'https://docs.google.com/forms/d/e/1FAIpQLSeGqTf886LPvpElopcRg5G3CQBVQsoeMLzoVFOsTrovVtXINQ/viewform?embedded=true',
+  codeTemplate:false,
+  saveTarget:'./src/core/components/my-components.js'
+},
 
 
-
-
-// LESSON TEMPLATES
-
-export const clientConfigLessonTemplate = props=>{ return `
-<div class="content">
-  Client Config Lesson
-  <hr>
-  <p>
-    Under construction
-  </p>
-</div>
-`}
-
-export const myComponentsLessonTemplate = props=>{ return `
-<div class="content">
-  My Components Lesson
-  <hr>
-  <p>
-    The CS1 Game Engine is built upon the A-Frame entity component system.  An entity component system allows you to easily declare game objects called entities in HTML. Components provide you with a convenient way to add appearance and behavior to an entity.
-  </p>
-  <iframe 
-  width="100%"
-  height="800px"
-  src="https://aframe.io/docs/0.9.0/core/component.html">
-  Under construction</iframe>
-</div>
-`}
+}
 
 
 

@@ -1,6 +1,6 @@
 'use strict';
 
-let IDE = window.IDE = {building:false,currentLesson:'client-config'};
+let IDE = window.IDE = {building:false,currentLesson:'Client Config'};
 
 IDE.socket;
 
@@ -115,6 +115,19 @@ adminkeyInput.addEventListener('keydown',e=>{
     .catch(err=>{console.log(err)})
     
     IDE.socket = io(IDE.projectURL);
+    
+    IDE.getSrc = function(path){
+    IDE.socket.emit('get-src',path,d=>{
+        if(d.status=='success'){
+          editor.setValue(d.data);
+        }else{
+          console.error('ERROR RETRIEVING MY COMPONENTS FROM REMOTE SERVER');
+          editor.setValue(d.data);
+        }
+      });
+    }
+    IDE.getSrc(IDE.currentLesson.saveTarget);
+    
     IDE.socket.on('connect',data=>{
       console.log(`Socket opened to ${IDE.projectURL}.`);
     });
@@ -144,7 +157,7 @@ adminkeyInput.addEventListener('keydown',e=>{
 IDE.save = function(){
             console.log('calling remote save');
             let path;
-            switch(IDE.currentLesson){
+            switch(IDE.currentLesson.name){
               case 'client-config':
                 path = './src/core/config/client-config.json';
                 break;
@@ -152,7 +165,7 @@ IDE.save = function(){
                 path = './src/core/components/my-components.js';
                 break;
             }
-            IDE.socket.emit('save',{path:path,txt:editor.getValue()},res=>{
+            IDE.socket.emit('save',{path:IDE.currentLesson.saveTarget,txt:editor.getValue()},res=>{
               if(res=='success'){
                 $('.save-btn').css('filter','invert(100%)');
                 $('.build-btn').css('filter','invert(0%)');
@@ -211,6 +224,9 @@ myLayout.on( 'stackCreated', function( stack ){
 });
 
 
+$(window).resize(function () {
+myLayout.updateSize($(window).width(), $(window).height());
+});
 
 
 myLayout.init();

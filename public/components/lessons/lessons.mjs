@@ -1,65 +1,90 @@
-import {aframeComponentCodeTemplate,
-        clientConfigLessonTemplate,
-        myComponentsLessonTemplate} from './templates.mjs';
+import {templates} from './templates.mjs';
 
 
 
 export const lessons = state=>{
 
-  IDE.getSrc = function(path){
-    IDE.socket.emit('get-src',path,d=>{
-      if(d.status=='success'){
-        editor.setValue(d.data);
-      }else{
-        console.error('ERROR RETRIEVING MY COMPONENTS FROM REMOTE SERVER');
-        editor.setValue(d.data);
-      }
-    });
-  }
-  IDE.clientConfigLessonTemplate = clientConfigLessonTemplate;
-  IDE.myComponentsLessonTemplate = myComponentsLessonTemplate;
-
+  IDE.lesson = {templates:templates};
+  IDE.lesson.templates.keys = Object.keys(templates);
+  
+  
   return `
   
   
-  <select id="lesson-select">
-    <option value="client-config">Client Config</option>
-    <option value="my-components">My Components</option>
-  </select>
+  <select id="lesson-select"></select>
+  
+  <button id="launch-btn" class="pulse">Launch Game</button>
+  
+  <div id="lesson">
+  <div class="content">
+  <span class="lesson-hd">Client Config</span> 
+  <button id="quiz-btn" class="pulse">✓</button>
+  <button id="lesson-btn" class="pulse">📖</button>
+    <hr>
+    <iframe 
+    id="lesson-iframe"
+    width="100%"
+    height="800px"
+    src=""/>
+    <iframe 
+    id="lesson-quizframe"
+    width="100%"
+    height="800px"
+    src=""/>
+  </div>
   
   
   <script>
     
-    let lesson = document.querySelector('#lesson');
-    lesson.innerHTML = IDE.clientConfigLessonTemplate();
-    let select = document.querySelector('#lesson-select');
+    IDE.lesson.select = document.querySelector('#lesson-select');
+    IDE.lesson.heading = document.querySelector('.lesson-hd');
+    IDE.lesson.iframe = document.querySelector('#lesson-iframe');
+    IDE.lesson.quizframe = document.querySelector('#lesson-quizframe');
     
-    select.addEventListener('change',e=>{
+    IDE.lesson.templates.keys.forEach(lessonName=>{
+      IDE.lesson.select.options[IDE.lesson.select.options.length] = new Option(lessonName, lessonName);
+    });
+    
+    let temp = IDE.lesson.templates[IDE.lesson.select.value];
+    IDE.saveTarget = temp.saveTarget;
+    IDE.lesson.heading.innerHTML = IDE.lesson.select.value;
+    IDE.lesson.iframe.src = temp.lessonURL;
+    IDE.lesson.quizframe.src = temp.quizURL;
+    temp.name = IDE.lesson.select.value;
+    IDE.currentLesson = temp;
+    
      
-     switch(select.value){
-     
-       case 'client-config':
-         lesson.innerHTML = IDE.clientConfigLessonTemplate();
-         IDE.getSrc('./src/core/config/client-config.json');
-         IDE.currentLesson = 'client-config';
-         break;
-       case 'my-components':
-         lesson.innerHTML = IDE.myComponentsLessonTemplate();
-         IDE.getSrc('./src/core/components/my-components.js');
-         IDE.currentLesson = 'my-components';
-         break;
-     
-     }
-      
+    IDE.lesson.select.addEventListener('change',e=>{
+      let temp = IDE.lesson.templates[IDE.lesson.select.value];
+      IDE.saveTarget = temp.saveTarget;
+      IDE.lesson.heading.innerHTML = IDE.lesson.select.value;
+      IDE.lesson.iframe.src = temp.lessonURL;
+      IDE.lesson.quizframe.src = temp.quizURL;
+      IDE.getSrc(temp.saveTarget);
+      IDE.lesson.iframe.hidden = false; 
+      temp.name = IDE.lesson.select.value;
+      IDE.currentLesson = temp;
     
     });
-   
+    
+    let launchBtn = document.querySelector('#launch-btn');
+    launchBtn.addEventListener('click',e=>{
+      window.open(
+        IDE.projectURL,
+        '_blank' // <- This is what makes it open in a new window.
+      );
+    });
+    let quizBtn = document.querySelector('#quiz-btn');
+    quizBtn.addEventListener('click',e=>{
+      IDE.lesson.iframe.hidden = true; 
+    });
+    let lessonBtn = document.querySelector('#lesson-btn');
+    lessonBtn.addEventListener('click',e=>{
+      IDE.lesson.iframe.hidden = false; 
+    });
+    
   </script>
-  
-  <div id="lesson"></div>
-  
-  
-  
+   
   `
 
 

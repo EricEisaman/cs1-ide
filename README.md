@@ -7,6 +7,14 @@ ___
 - Help learners maintain focus while demonstrating formative understanding and building project based evidence of learning.
 - Help educators design and manage their own custom curricular content
 
+## First Steps
+- <a href="https://bit.ly/cs1-ide-remix" rel="noopener noreferer">Remix</a> this IDE project.
+- <a href="https://bit.ly/cs1-remix" rel="noopener noreferer">Remix</a> the CS1 Game Engine base project.
+- Add an **ADMIN_KEY** in the **.env** of your base project remix.
+- Customize the **name** of your base project remix.
+- Log into the **CS1 IDE** with your **base project remix name** and **ADMIN_KEY**.
+- Create your own lesson content and update **public/components/lessons/templates.mjs**.
+
 ## Your Feedback is Important
 Post feedback in GitHub issues at <a href="https://github.com/EricEisaman/cs1-ide/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc" rel="noopener noreferer">the official CS1 IDE repository</a>.
 

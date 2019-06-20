@@ -14,13 +14,10 @@ export const lessons = state=>{
   <select id="lesson-select"></select>
   
   <button id="launch-btn" class="pulse">Launch Game</button>
-  
-  <div id="lesson">
-  <div class="content">
-  <span class="lesson-hd">Client Config</span> 
-  <button id="quiz-btn" class="pulse">✓</button>
   <button id="lesson-btn" class="pulse">📖</button>
-    <hr>
+  <button id="quiz-btn" class="pulse">✓</button>
+  <div id="lesson">
+  <div class="content">  
     <div id="frames">   
       <iframe id="lesson-quizframe" allowfullscreen src=""/>
       <iframe id="lesson-iframe" allowfullscreen src=""/>
@@ -41,7 +38,6 @@ export const lessons = state=>{
     
     let temp = IDE.lesson.templates[IDE.lesson.select.value];
     IDE.saveTarget = temp.saveTarget;
-    IDE.lesson.heading.innerHTML = IDE.lesson.select.value;
     IDE.lesson.iframe.src = temp.lessonURL;
     IDE.lesson.quizframe.src = temp.quizURL;
     temp.name = IDE.lesson.select.value;
@@ -51,7 +47,6 @@ export const lessons = state=>{
     IDE.lesson.select.addEventListener('change',e=>{
       let temp = IDE.lesson.templates[IDE.lesson.select.value];
       IDE.saveTarget = temp.saveTarget;
-      IDE.lesson.heading.innerHTML = IDE.lesson.select.value;
       IDE.lesson.iframe.src = temp.lessonURL;
       IDE.lesson.quizframe.src = temp.quizURL;
       IDE.getSrc(temp.saveTarget);
@@ -67,6 +62,7 @@ export const lessons = state=>{
         IDE.projectURL,
         '_blank' // <- This is what makes it open in a new window.
       );
+      IDE.lesson.select.focus();
     });
     let quizBtn = document.querySelector('#quiz-btn');
     quizBtn.addEventListener('click',e=>{

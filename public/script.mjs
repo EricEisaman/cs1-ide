@@ -117,7 +117,8 @@ adminkeyInput.addEventListener('keydown',e=>{
     IDE.socket = io(IDE.projectURL);
     
     IDE.getSrc = function(path){
-    IDE.socket.emit('get-src',path,d=>{
+      console.log('trying to get remote source code');
+      IDE.socket.emit('get-src',path,d=>{
         if(d.status=='success'){
           editor.setValue(d.data);
         }else{
@@ -126,8 +127,7 @@ adminkeyInput.addEventListener('keydown',e=>{
         }
       });
     }
-    IDE.getSrc(IDE.currentLesson.saveTarget);
-    
+      
     IDE.socket.on('connect',data=>{
       console.log(`Socket opened to ${IDE.projectURL}.`);
     });
@@ -137,6 +137,7 @@ adminkeyInput.addEventListener('keydown',e=>{
     IDE.socket.emit('admin-key',adminkeyInput.value,d=>{
       if(d=='success'){
         $('#overlay').hide();
+        IDE.getSrc(IDE.currentLesson.saveTarget);
       } 
     });
     IDE.socket.on('log',data=>{

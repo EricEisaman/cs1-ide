@@ -21,16 +21,10 @@ export const lessons = state=>{
   <button id="quiz-btn" class="pulse">✓</button>
   <button id="lesson-btn" class="pulse">📖</button>
     <hr>
-    <iframe 
-    id="lesson-iframe"
-    width="100%"
-    height="800px"
-    src=""/>
-    <iframe 
-    id="lesson-quizframe"
-    width="100%"
-    height="800px"
-    src=""/>
+    <div id="frames">   
+      <iframe id="lesson-quizframe" allowfullscreen src=""/>
+      <iframe id="lesson-iframe" allowfullscreen src=""/>
+    </div>
   </div>
   
   
@@ -76,11 +70,11 @@ export const lessons = state=>{
     });
     let quizBtn = document.querySelector('#quiz-btn');
     quizBtn.addEventListener('click',e=>{
-      IDE.lesson.iframe.hidden = true; 
+      IDE.lesson.iframe.style.zIndex = -10; 
     });
     let lessonBtn = document.querySelector('#lesson-btn');
     lessonBtn.addEventListener('click',e=>{
-      IDE.lesson.iframe.hidden = false; 
+      IDE.lesson.iframe.style.zIndex = 0; 
     });
     
   </script>

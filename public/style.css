@@ -9,8 +9,18 @@ h2{
   color:#f00 !important;
 }
 
+#frames{
+  margin:0 auto;
+  margin-top:5px;
+  width:95%
+}
+
 iframe{
-  background-color:#fff;
+  position:absolute;
+  background-color:#282A36;
+  width:95%;
+  height:80%;
+  border:0;
 }
 
 .save-btn{

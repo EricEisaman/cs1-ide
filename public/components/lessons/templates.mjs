@@ -1,6 +1,6 @@
 export const templates = {
 
-"Client Config": {
+"Data Types": {
   lessonURL: 'https://docs.google.com/presentation/d/e/2PACX-1vTQSm1t0LUtmmSljJU1SI2cjoDQuUOoRHW1Y6M5W2MuiePevJbdn4gSQzhnLDgJDA5IkxGBtjUQzY2u/embed?start=false&loop=false&delayms=333000',
   quizURL: 'https://docs.google.com/forms/d/e/1FAIpQLSfbDUh1E2XsvBYcNUxTHvAykWd8x-fn5g5Srjco9NmgcTyNmA/viewform?embedded=true',
   codeTemplate:false,

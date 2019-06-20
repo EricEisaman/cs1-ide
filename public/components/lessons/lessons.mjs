@@ -55,7 +55,7 @@ export const lessons = state=>{
       IDE.lesson.iframe.src = temp.lessonURL;
       IDE.lesson.quizframe.src = temp.quizURL;
       IDE.getSrc(temp.saveTarget);
-      IDE.lesson.iframe.hidden = false; 
+      IDE.lesson.iframe.style.zIndex = 0; 
       temp.name = IDE.lesson.select.value;
       IDE.currentLesson = temp;
     

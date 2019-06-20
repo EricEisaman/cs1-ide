@@ -102,6 +102,7 @@ select{
   font-size:16px;
   color: #343830;
   border-radius:5px;
+  margin-left:0.5em;
 }
 
 .content{

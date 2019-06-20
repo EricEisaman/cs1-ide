@@ -15,7 +15,7 @@ export const templates = {
 },
 
 "JSON": {
-  lessonURL: 'https://docs.google.com/presentation/d/e/2PACX-1vQiQQbRk3Q4wQ-1qXfkYRSpiR9fE5YFnd67UwaSN5X41y3Ok8VeX6zbj0frm9PvwPlSMLvDUfcnCNzh/embed?start=false&loop=false&delayms=333000',
+  lessonURL: 'https://docs.google.com/presentation/d/e/2PACX-1vSJ7cu1Qvzc8RuZ4oFVU1ys-Jm1xIC7J70GUXDosSt6JLq0yrjeL32tj_hJH1FO0J4fo7UhxEKP0H52/embed?start=false&loop=false&delayms=660000',
   quizURL: 'https://docs.google.com/forms/d/e/1FAIpQLSdqgU3M_oAbwIKEQiEkCMYW7lQjmQ1n5BiZzq3xdL2V7liQoA/viewform?embedded=true',
   codeTemplate:false,
   saveTarget:'./src/core/config/client-config.json'

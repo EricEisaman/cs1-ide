@@ -7,7 +7,7 @@ export const templates = {
   saveTarget:'./src/core/config/client-config.json'
 },
 "Components": {
-  lessonURL: 'https://aframe.io/docs/0.9.0/core/component.html',
+  lessonURL: 'https://docs.google.com/presentation/d/e/2PACX-1vQiQQbRk3Q4wQ-1qXfkYRSpiR9fE5YFnd67UwaSN5X41y3Ok8VeX6zbj0frm9PvwPlSMLvDUfcnCNzh/embed?start=false&loop=false&delayms=333000',
   quizURL: 'https://docs.google.com/forms/d/e/1FAIpQLSeGqTf886LPvpElopcRg5G3CQBVQsoeMLzoVFOsTrovVtXINQ/viewform?embedded=true',
   codeTemplate:false,
   saveTarget:'./src/core/components/my-components.js'

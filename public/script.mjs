@@ -44,6 +44,7 @@ var config = {
                 isClosable: false,
                 type:'component',
                 componentName: 'log',
+                height: 30,
                 componentState: { text: 'CS1 IDE Log' }
               }]
           }

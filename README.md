@@ -15,6 +15,9 @@ ___
 - Log into the **CS1 IDE** with your **base project remix name** and **ADMIN_KEY**.
 - Create your own lesson content and update **public/components/lessons/templates.mjs**.
 
+## Extended Language Support
+Although the **CS1 IDE** and **CS1 Game Engine** are written in **JavaScript**, plans are in the works for **Java** and **Python** language integration. These plans include a **Java Spark** based microservice project and **JSweet** transpiled client code project to eventually integrate into the **CS1 IDE** and talk to **CS1 Game Engine** projects.  Down the road this will enable students to learn with **Java** based lesson sets. In the same spirit I aim to design and build a **Python Flask** based microservice and **Transcrypt** based browser client so that students can use the **CS1 IDE** with **Python** based lesson sets.
+
 ## Your Feedback is Important
 Post feedback in GitHub issues at <a href="https://github.com/EricEisaman/cs1-ide/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc" rel="noopener noreferer">the official CS1 IDE repository</a>.
 

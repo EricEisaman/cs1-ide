@@ -200,6 +200,14 @@ button:hover, button:focus {
   color: #fff;
 }
 
+
+/* CONTROLS */
+
+#controls {
+  margin: 0 auto;
+  width: 92%;
+}
+
 /* CUSTOM SELECT*/
 
 select{
@@ -209,7 +217,7 @@ select{
   color: lime;
   border: 2px solid lime;
   border-radius:5px;
-  margin-left:0.5em;
+  margin-left:0.0em;
   display: inline-block;
   background-color: #282A36;
   position: relative;

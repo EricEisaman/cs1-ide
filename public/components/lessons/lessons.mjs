@@ -10,12 +10,14 @@ export const lessons = state=>{
   
   return `
   
-  
-  <select id="lesson-select" class="custom-select"></select>
-  
+  <div id="controls">
+  <select id="lesson-select" class="custom-select"></select> 
   <button id="launch-btn" class="pulse">Launch Game</button>
   <button id="lesson-btn" class="pulse">📖</button>
   <button id="quiz-btn" class="pulse">✓</button>
+  </div>
+  
+  
   <div id="lesson">
   <div class="content">  
     <div id="frames">   

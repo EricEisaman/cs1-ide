@@ -1,6 +1,6 @@
 export const templates = {
 
-"Variables and Logging": {
+"Variables, Logging and Debugging": {
   lessonURL: 'https://docs.google.com/presentation/d/e/2PACX-1vSaITNmVTyufVo-8aqI4nKK_pKuWA9j4StRdSYl66aoaI7Fmi4mPyWmsN5UEU9BP5jZwS8k2HFdoh1y/embed?start=false&loop=false&delayms=660000',
   quizURL: 'https://docs.google.com/forms/d/e/1FAIpQLSc7YF-ZQTdoB9akDJLdONEzn3pFGxxGFfPIeScVKqAKxDJ8DA/viewform?embedded=true',
   codeTemplate:false,

@@ -97,14 +97,6 @@ input{
   text-align: center; 
 }
 
-select{
-  width:300px;
-  height:35px;
-  font-size:16px;
-  color: #343830;
-  border-radius:5px;
-  margin-left:0.5em;
-}
 
 .content{
   margin-left:10px;
@@ -208,5 +200,47 @@ button:hover, button:focus {
   color: #fff;
 }
 
-/*oo*/
+/* CUSTOM SELECT*/
 
+select{
+  width:300px;
+  height:35px;
+  font-size:16px;
+  color: lime;
+  border: 2px solid lime;
+  border-radius:5px;
+  margin-left:0.5em;
+  display: inline-block;
+  background-color: #282A36;
+  position: relative;
+  outline:none;
+}
+
+.custom-select select{
+  border: none;
+  outline: none;
+  background: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  margin: 0;
+  width: 100%;
+  padding: 12px 55px 15px 15px;
+  font-size: 16px;
+  color: lime;
+}
+.custom-select:after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50px;
+  height: 100%;
+  line-height: 38px;
+  content: "∨";
+  text-align: center;
+  color: lime;
+  font-size: 24px;
+  border-left: 1px solid lime;
+  z-index: -1;
+}

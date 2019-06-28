@@ -28,18 +28,18 @@ export const templates = {
   saveTarget:'./src/core/components/my-components.js'
 },
 
-"Using Components in JS": {
-  lessonURL: 'https://docs.google.com/presentation/d/e/2PACX-1vQ4Q1zGdnh2xV4LgpztMo7EeMSM2jB0RHC8tRDjjVn9BfYt5m1LsIUd0ebLT0hX8BwVm7AURsl22wrv/embed?start=false&loop=false&delayms=333000',
-  quizURL: 'https://docs.google.com/forms/d/e/1FAIpQLSe4FWqBU7t5xv84gKk_vTNwZRiKCTKwoqgfB9fp5SmIqF2-iw/viewform?embedded=true',
-  codeTemplate:false,
-  saveTarget:'./src/core/components/my-components.js'
-},
-
 "Using Components in HTML": {
   lessonURL: 'https://docs.google.com/presentation/d/e/2PACX-1vRK75jfd-ol8p_h0YoWGHGNNTV7R_76TuXARf1N4nTgUR7F_b2cBg3DPSSheX2K-0d3vmLRH4ZmoIda/embed?start=false&loop=false&delayms=60000',
   quizURL: 'https://docs.google.com/forms/d/e/1FAIpQLSdsbgeYNCXfeLTQQ9e3Ebj7rhA-bZ-VRfjji7miJ0k-VYhYIQ/viewform?embedded=true',
   codeTemplate:false,
   saveTarget:'./public/index.html'
+},
+
+"Using Components in JS": {
+  lessonURL: 'https://docs.google.com/presentation/d/e/2PACX-1vQ4Q1zGdnh2xV4LgpztMo7EeMSM2jB0RHC8tRDjjVn9BfYt5m1LsIUd0ebLT0hX8BwVm7AURsl22wrv/embed?start=false&loop=false&delayms=333000',
+  quizURL: 'https://docs.google.com/forms/d/e/1FAIpQLSe4FWqBU7t5xv84gKk_vTNwZRiKCTKwoqgfB9fp5SmIqF2-iw/viewform?embedded=true',
+  codeTemplate:false,
+  saveTarget:'./src/core/components/my-components.js'
 },
 
 

@@ -42,6 +42,13 @@ export const templates = {
   saveTarget:'./src/core/components/my-components.js'
 },
 
+"Functions in JavaScript": {
+  lessonURL: 'https://docs.google.com/presentation/d/e/2PACX-1vTqHCqPTWl-K3I0X70vN3X1jgyOSJWGuIQmkc4XvWusD9GgETAjS9eTRGhgfcrwk8Mnpq6qgjN4pDKT/embed?start=false&loop=false&delayms=60000',
+  quizURL: 'https://docs.google.com/forms/d/e/1FAIpQLSf8_u5CzBPxXCbfVC28JBG9WVMVyP1xu3_tZNjiyg5_bP_7nw/viewform?embedded=true',
+  codeTemplate:false,
+  saveTarget:'./src/core/components/my-components.js'
+},
+
 
 
 }

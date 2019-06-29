@@ -49,6 +49,20 @@ export const templates = {
   saveTarget:'./src/core/components/my-components.js'
 },
 
+"Boolean Expressions in JS": {
+  lessonURL: 'https://docs.google.com/presentation/d/e/2PACX-1vTWHy-erFeW4zNWJPZT_J1ZHmOrkROaCuwjisS7sgtArJsbP9nmnohVRgW8Wt-5fN0XcQzHyiMp9MWQ/embed?start=false&loop=false&delayms=60000',
+  quizURL: 'https://docs.google.com/forms/d/e/1FAIpQLSd3YgDFptJ1LicRJ-dB3CI2ISfgnf8p095iKOAopBTJLw6mlA/viewform?embedded=true',
+  codeTemplate:false,
+  saveTarget:'./src/core/components/my-components.js'
+},
+
+"Creating Components Part 2": {
+  lessonURL: 'https://docs.google.com/presentation/d/e/2PACX-1vSQKHVBZ5qfq-mGG85RmI8NbU5U_y9_cTNXZYnA0edFw84XmExa9EQKQXGZcPiPEzRMc8SMmqK92FpO/embed?start=false&loop=false&delayms=60000',
+  quizURL: 'https://docs.google.com/forms/d/e/1FAIpQLSfDjIQRW4s2jjlH1tDLCwjxoHbxUorgAa2Et_Ju8xNxeMpnsA/viewform?embedded=true',
+  codeTemplate:false,
+  saveTarget:'./src/core/components/my-components.js'
+},
+
 
 
 }

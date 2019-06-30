@@ -119,6 +119,8 @@ adminkeyInput.addEventListener('keydown',e=>{
     
     IDE.getSrc = function(path){
       console.log('trying to get remote source code');
+      if(path.split('.').pop()=='html')editor.setOption('mode', 'htmlembedded');
+      else editor.setOption('mode', 'javascript');
       IDE.socket.emit('get-src',path,d=>{
         if(d.status=='success'){
           editor.setValue(d.data);

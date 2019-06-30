@@ -126,7 +126,8 @@ adminkeyInput.addEventListener('keydown',e=>{
         case 'js': mode = 'javascript';
           break;
         case 'json': mode = {name: "javascript", json: true};
-          break
+          break;
+        case 'css': mode = 'css';
       }
       editor.setOption('mode', mode);
       IDE.socket.emit('get-src',path,d=>{

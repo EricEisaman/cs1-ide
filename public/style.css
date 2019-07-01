@@ -23,6 +23,11 @@ iframe{
   border:0;
 }
 
+#lesson-quizframe{
+  width:100%;
+  left:0px;
+}
+
 .save-btn{
   display:inline-block;
   transform:scale(0.7);

@@ -44,7 +44,6 @@ export const lessons = state=>{
     IDE.lesson.quizframe.src = temp.quizURL;
     temp.name = IDE.lesson.select.value;
     IDE.currentLesson = temp;
-    
      
     IDE.lesson.select.addEventListener('change',e=>{
       let temp = IDE.lesson.templates[IDE.lesson.select.value];

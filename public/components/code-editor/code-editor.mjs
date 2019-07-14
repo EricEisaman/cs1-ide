@@ -1,6 +1,7 @@
 import codemirror from '../../../lib/codemirror/codemirror.mjs';
 import jsMode from '../../../lib/codemirror/js-mode.mjs';
 import htmlembeddedMode from '../../../lib/codemirror/htmlembedded-mode.mjs';
+import pyMode from '../../../lib/codemirror/py-mode.mjs';
 
 export const codeEditor = state=>{
 

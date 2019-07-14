@@ -128,6 +128,8 @@ adminkeyInput.addEventListener('keydown',e=>{
         case 'json': mode = {name: "javascript", json: true};
           break;
         case 'css': mode = 'css';
+          break;
+        case 'py': mode = 'python';
       }
       editor.setOption('mode', mode);
       IDE.socket.emit('get-src',path,d=>{
@@ -200,6 +202,7 @@ IDE.build = function(){
               $('.build-btn').css('filter','invert(100%)');
               if(res=='success'){
                 console.log('successful remote build');
+                editor.setSize('100%','100%');
               }else{
                 console.log('error with remote build');
               }

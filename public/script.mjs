@@ -101,6 +101,7 @@ var addMenuItem = function( title, name, text='default' ) {
 
 let projectInput = document.querySelector('#project');
 let adminkeyInput = document.querySelector('#adminkey');
+let cachedKey = '';
 adminkeyInput.addEventListener('keydown',e=>{
   if(e.which==13 && (projectInput.value.length>0)  ){
   
@@ -152,6 +153,7 @@ adminkeyInput.addEventListener('keydown',e=>{
       if(d=='success'){
         $('#overlay').hide();
         IDE.getSrc(IDE.currentLesson.saveTarget);
+        cachedKey = adminkeyInput.value;
       } 
     });
     IDE.socket.on('log',data=>{
@@ -163,6 +165,15 @@ adminkeyInput.addEventListener('keydown',e=>{
        }
        window.log.setValue(data);
        window.log.setSize('100%','100%');
+    });
+    IDE.socket.on('disconnect',data=>{
+       IDE.socket.emit('admin-key',cachedKey,d=>{
+          if(d=='success'){
+            console.log('Reauthorizing server connection ...')
+            IDE.save();
+            IDE.getSrc(IDE.currentLesson.saveTarget);
+          } 
+        });
     });
         
   }

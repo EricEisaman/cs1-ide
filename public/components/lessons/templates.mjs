@@ -69,6 +69,34 @@ export const templates = {
   codeTemplate:false,
   saveTarget:'./public/index.html'
 },
+  
+"Lesson 11": {
+  lessonURL: 'https://docs.google.com/presentation/d/e/2PACX-1vTr91Cl1vz2_gBh0HIgLLMQJ0ITUJhBjiel1qafoqZ5Qx8S0Zcma76NDAgkoIauBdpXkzdZYQPt8SgG/embed?start=false&loop=false&delayms=60000',
+  quizURL: 'https://docs.google.com/forms/d/e/1FAIpQLSem6yrgVPqvCxDsgAf1a--r67oSelv48_YcoPcxPei4IuZcEA/viewform?embedded=true',
+  codeTemplate:false,
+  saveTarget:'./src/core/components/my-components.js'
+},
+  
+"Lesson 12": {
+  lessonURL: 'https://docs.google.com/presentation/d/e/2PACX-1vSGEAn_1jyFqLz6e5vNtGECadN4Qd0LYz6JNOImbF3QTv_Z-b8l4eUuh-TfO1Fm9Xym0223kgJKssf0/embed?start=false&loop=false&delayms=60000',
+  quizURL: 'https://docs.google.com/forms/d/e/1FAIpQLSfyiSLKksYAi1u3xLgkPsHJwEKZKIR-R1zSH8T43YzmmuBTyg/viewform?embedded=true',
+  codeTemplate:false,
+  saveTarget:'./src/core/components/my-components.js'
+},
+
+"Lesson 13": {
+  lessonURL: 'https://docs.google.com/presentation/d/e/2PACX-1vQ8axMqi6KlLcQQwqPZbag_099DN43sSryTP2paN3MQfD9g9lKoAT7LZ0e8tlSXvnNoVUn81HfhqycO/embed?start=false&loop=false&delayms=60000',  quizURL:'https://docs.google.com/forms/d/e/1FAIpQLSePmeTJUESvHdRRTkl6L_O1EBhT5Tvy8dmy8uaKN_wNMOl13w/viewform?embedded=true',
+  codeTemplate:false,
+  saveTarget:'./public/index.html'
+},
+
+"Lesson 14": {
+  lessonURL: 'https://docs.google.com/presentation/d/e/2PACX-1vTVH4XFooGbCOYzS2Ix2_waGAmoMM7GpG3Fznnsr1F120vP_1hHdCQttYN_kQBEmqI8gQqPKf6VH0-Y/embed?start=false&loop=false&delayms=60000',
+  quizURL: 'https://docs.google.com/forms/d/e/1FAIpQLSccJsNQ-c7qojV5UnXFGXT5I4WTuSVd5fl_DyMRelqXkCG6XA/viewform?embedded=true',
+  codeTemplate:false,
+  saveTarget:'./src/core/components/my-components.js'
+},
+
 
 
 

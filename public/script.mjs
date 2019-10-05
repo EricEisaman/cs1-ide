@@ -192,15 +192,14 @@ IDE.save = function(){
                 path = './src/core/components/my-components.js';
                 break;
             }
-            $('.save-btn').css('filter','invert(100%)');
             IDE.socket.emit('save',{path:IDE.currentLesson.saveTarget,txt:editor.getValue()},res=>{
               if(res=='success'){
-                $('.save-btn').css('filter','invert(0%)');
+                $('.save-btn').css('filter','invert(100%)');
                 
                 if(IDE.currentLesson.saveTarget.includes('socket/addons')){
                   IDE.socket.emit('refresh',res=>{
                     if(res=='success'){
-                      $('.save-btn').css('filter','invert(0%)');
+                      $('.save-btn').css('filter','invert(100%)');
                       console.log('server refresh success');
                     }else{alert('fail in refreshing server..')}
                   }); 

@@ -136,6 +136,7 @@ adminkeyInput.addEventListener('keydown',e=>{
       IDE.socket.emit('get-src',path,d=>{
         if(d.status=='success'){
           editor.setValue(d.data);
+          $('.save-btn').css('filter','invert(100%)');
         }else{
           console.error('ERROR RETRIEVING MY COMPONENTS FROM REMOTE SERVER');
           editor.setValue(d.data);
@@ -157,7 +158,7 @@ adminkeyInput.addEventListener('keydown',e=>{
       } 
     });
     IDE.socket.on('log',data=>{
-       let el = document.querySelector('.cm-s-dracula');
+       const el = document.querySelector('.cm-s-dracula');
        if(data.includes('failed')){
          el.setAttribute('style',"color:red !important");
        }else{
@@ -170,8 +171,8 @@ adminkeyInput.addEventListener('keydown',e=>{
        IDE.socket.emit('admin-key',cachedKey,d=>{
           if(d=='success'){
             console.log('Reauthorizing server connection ...')
-            IDE.save();
-            IDE.getSrc(IDE.currentLesson.saveTarget);
+            //IDE.save();
+            //IDE.getSrc(IDE.currentLesson.saveTarget);
           } 
         });
     });
@@ -191,20 +192,31 @@ IDE.save = function(){
                 path = './src/core/components/my-components.js';
                 break;
             }
+            $('.save-btn').css('filter','invert(100%)');
             IDE.socket.emit('save',{path:IDE.currentLesson.saveTarget,txt:editor.getValue()},res=>{
               if(res=='success'){
-                $('.save-btn').css('filter','invert(100%)');
-                $('.build-btn').css('filter','invert(0%)');
+                $('.save-btn').css('filter','invert(0%)');
+                
+                if(IDE.currentLesson.saveTarget.includes('socket/addons')){
+                  IDE.socket.emit('refresh',res=>{
+                    if(res=='success'){
+                      $('.save-btn').css('filter','invert(0%)');
+                      console.log('server refresh success');
+                    }else{alert('fail in refreshing server..')}
+                  }); 
+                  console.log('called refresh on server');
+                }     
               }else{
                 alert('error saving to remote server');
               }
             });
           }
 IDE.build = function(){
+            setLog('building remote project');
             if(IDE.building)return;
             console.log('calling remote build');
             IDE.building = true;
-            $('.build-btn').html('building remote project');
+            $('.build-btn').html('');
             $('.save-btn').hide();
             IDE.socket.emit('build',res=>{
               IDE.building = false;
@@ -219,6 +231,12 @@ IDE.build = function(){
               }
             });
           }
+
+function setLog(v){
+  const el = document.querySelector('.cm-s-dracula');
+  window.log.setValue(v);
+  window.log.setSize('100%','100%');
+}
 
 
 

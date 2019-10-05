@@ -96,6 +96,13 @@ export const templates = {
   codeTemplate:false,
   saveTarget:'./src/core/components/my-components.js'
 },
+  
+"Lesson 15": {
+  lessonURL: 'https://docs.google.com/presentation/d/e/2PACX-1vQ84Vih--laSwkYXiUR3eAkjI1AAhS4kIAOXlc2o1hejVLJ6WhURRnxjcwGoeOpuaFjgpjMiZVtOxel/embed?start=false&loop=false&delayms=60000',
+  quizURL: 'https://docs.google.com/forms/d/e/1FAIpQLScW-962nc5C0Av9gO4B5Gd7bBdy2lAEv4rU_KNkvzPSCjg8yg/viewform?embedded=true',
+  codeTemplate:false,
+  saveTarget:'./server/socket/addons/my-addon.js'
+},
 
 
 

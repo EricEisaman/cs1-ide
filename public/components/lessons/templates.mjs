@@ -103,6 +103,13 @@ export const templates = {
   codeTemplate:false,
   saveTarget:'./server/socket/addons/my-addon.js'
 },
+  
+"Lesson 16": {
+  lessonURL: 'https://docs.google.com/presentation/d/e/2PACX-1vRWq21HMaMRQNHpB_-HN5JltD7eL-YPrgA1hs3l8iOXQowEnzx5ROAnlX2KQLSZZ3iW1IPzPzsKs7Bs/embed?start=false&loop=false&delayms=60000',
+  quizURL: 'https://docs.google.com/forms/d/e/1FAIpQLSdj9-yrZE2aGoAsD41EYOdUUGHD7LRojx3U-925cMDLonmtqA/viewform?embedded=true',
+  codeTemplate:false,
+  saveTarget:'./src/core/components/my-components.js'
+},
 
 
 

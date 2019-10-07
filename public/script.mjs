@@ -137,6 +137,7 @@ adminkeyInput.addEventListener('keydown',e=>{
         if(d.status=='success'){
           editor.setValue(d.data);
           $('.save-btn').css('filter','invert(100%)');
+          editor.setSize('100%','100%');
         }else{
           console.error('ERROR RETRIEVING MY COMPONENTS FROM REMOTE SERVER');
           editor.setValue(d.data);

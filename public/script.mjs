@@ -177,6 +177,9 @@ adminkeyInput.addEventListener('keydown',e=>{
           } 
         });
     });
+    IDE.socket.on('server-addon-error',d=>{
+      setLog('SERVER ADDON ERROR');
+    });
         
   }
 });

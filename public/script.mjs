@@ -178,7 +178,13 @@ adminkeyInput.addEventListener('keydown',e=>{
         });
     });
     IDE.socket.on('server-addon-error',d=>{
-      setLog('SERVER ADDON ERROR');
+      setLog(`
+SERVER ADDON ERROR
+
+${d.name}:
+
+${d.message}
+`);
     });
         
   }

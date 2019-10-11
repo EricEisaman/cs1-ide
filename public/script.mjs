@@ -138,6 +138,11 @@ adminkeyInput.addEventListener('keydown',e=>{
           editor.setValue(d.data);
           $('.save-btn').css('filter','invert(100%)');
           editor.setSize('100%','100%');
+          if(path.includes('./public')||path.includes('./server')){
+            $('.build-btn').hide();
+          }else{
+            $('.build-btn').show();
+          }
         }else{
           console.error('ERROR RETRIEVING MY COMPONENTS FROM REMOTE SERVER');
           editor.setValue(d.data);

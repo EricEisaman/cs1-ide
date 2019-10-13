@@ -3,8 +3,14 @@
   <head>
     <title>CS1 IDE</title>
     <meta charset="utf-8">
+    <link rel="apple-touch-icon" href="https://cdn.glitch.com/158f7515-6108-45ef-a34a-c1b43b6c0940%2Fcs1_ios_icon_.png?v=1568572881691">
+<link rel="apple-touch-icon" sizes="152x152" href="https://cdn.glitch.com/9ce12bcb-589e-44b8-918c-8bc379281588%2FCS1_IDE_ios_icon_152.png?v=1570991219469">
+<link rel="apple-touch-icon" sizes="180x180" href="https://cdn.glitch.com/9ce12bcb-589e-44b8-918c-8bc379281588%2FCS1_IDE_ios_icon_180.png?v=1570991207071">
+<link rel="apple-touch-icon" sizes="167x167" href="https://cdn.glitch.com/9ce12bcb-589e-44b8-918c-8bc379281588%2FCS1_IDE_ios_icon_167.png?v=1570991214507">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="canonical" href="https://cs1-ide.glitch.me/">
     <link rel="shortcut icon" href="https://cdn.glitch.com/f8abb766-9950-44ff-9adb-2f5f53fdaf1b%2FCS1.png?1552299028732">
     
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -23,6 +29,18 @@
     <!-- import the webpage's javascript file -->
     <script src="/socket.io/socket.io.js"></script>
     <script type="module" src="/script.mjs" defer></script>
+    <script>
+      // This is just to force HTTPS (can't do it statically on glitch)
+      if(location.protocol == 'http:') location.protocol = 'https:';
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw_cache_site.js')
+          .then(reg => console.log('Service Worker registered', reg))
+          .catch(err => console.error('Service Worker **not** registered', err));
+      }
+      else {
+        console.warn('Service Worker not supported in this browser');
+      }   
+    </script>  
   </head> 
   
   

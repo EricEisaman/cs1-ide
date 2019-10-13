@@ -1,0 +1,22 @@
+{
+  "name": "CS1 IDE",
+  "short_name": "CS1 IDE",
+  "description": "Introduction to Computer Science through Game Design and Development.",
+  "icons": [
+    {
+      "sizes": "192x192",
+      "type": "image/png",
+      "src": "https://cdn.glitch.com/9ce12bcb-589e-44b8-918c-8bc379281588%2FCS1_IDE_logo_192.png?v=1570990873421"
+    },
+    {
+      "sizes": "512x512",
+      "type": "image/png",
+      "src": "https://cdn.glitch.com/9ce12bcb-589e-44b8-918c-8bc379281588%2FCS1_IDE_logo_512.png?v=1570990884051"
+    }
+  ],
+  "display": "fullscreen",
+  "orientation":"landscape",
+  "background_color": "white",
+  "theme_color": "maroon",
+  "start_url": "/index.html"
+}

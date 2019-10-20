@@ -110,6 +110,20 @@ export const templates = {
   codeTemplate:false,
   saveTarget:'./src/core/components/my-components.js'
 },
+  
+"Lesson 17  🎮": {
+  lessonURL: 'https://docs.google.com/presentation/d/e/2PACX-1vSvBmJZ8XgekHCzcBWo35YqhVNAAvQlaHwdURmIS1i6lfz4FDQ6TbozZJzvb_hB222X8veGcIH0RejT/embed?start=false&loop=false&delayms=60000',
+  quizURL: 'https://docs.google.com/forms/d/e/1FAIpQLSe_Tr60Aa0m7Rwck_wadt2Czx8abfhIv7VlPBnzbb_w9Uzz_w/viewform?embedded=true',
+  codeTemplate:false,
+  saveTarget:'./src/core/components/my-components.js'
+},
+  
+"Lesson 18  🐍": {
+  lessonURL: 'https://docs.google.com/presentation/d/e/2PACX-1vQnwnUgfAmwDh-GVD2Uv7KMpKVd6tfKQYZNoi0bQ5kaOUPCN5JBBPK8pIwO1UKF7mzE7hielOmaKpui/embed?start=false&loop=false&delayms=60000',
+  quizURL: 'https://docs.google.com/forms/d/e/1FAIpQLSedyWUMEMD_7cMBC_P78ssu_FtlbEAL-09cE18uvkLvDse8iQ/viewform?embedded=true',
+  codeTemplate:false,
+  saveTarget:'./public/my_script.py'
+},
 
 
 

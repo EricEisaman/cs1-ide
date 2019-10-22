@@ -111,14 +111,21 @@ export const templates = {
   saveTarget:'./src/core/components/my-components.js'
 },
   
-"Lesson 17  🎮": {
+"Lesson 17  📋": {
+  lessonURL: 'https://docs.google.com/presentation/d/e/2PACX-1vQlUW1Mp4rPF4fxEHNDMycgA7w_W4QBdKDQWzZSz5yz0qtLWAJBHFh7_yoFEeShIjIbgIkl5vtBS04X/embed?start=false&loop=false&delayms=60000',
+  quizURL: 'https://docs.google.com/forms/d/e/1FAIpQLSf0ux8NZFaCXCwB2z0noC3N4M6rOZs9vRcca5gXPgN-GR9Qpw/viewform?embedded=true',
+  codeTemplate:false,
+  saveTarget:'./public/index.html'
+},  
+  
+"Lesson 18  🎮": {
   lessonURL: 'https://docs.google.com/presentation/d/e/2PACX-1vSvBmJZ8XgekHCzcBWo35YqhVNAAvQlaHwdURmIS1i6lfz4FDQ6TbozZJzvb_hB222X8veGcIH0RejT/embed?start=false&loop=false&delayms=60000',
   quizURL: 'https://docs.google.com/forms/d/e/1FAIpQLSe_Tr60Aa0m7Rwck_wadt2Czx8abfhIv7VlPBnzbb_w9Uzz_w/viewform?embedded=true',
   codeTemplate:false,
   saveTarget:'./src/core/components/my-components.js'
 },
   
-"Lesson 18  🐍": {
+"Lesson 19  🐍": {
   lessonURL: 'https://docs.google.com/presentation/d/e/2PACX-1vQnwnUgfAmwDh-GVD2Uv7KMpKVd6tfKQYZNoi0bQ5kaOUPCN5JBBPK8pIwO1UKF7mzE7hielOmaKpui/embed?start=false&loop=false&delayms=60000',
   quizURL: 'https://docs.google.com/forms/d/e/1FAIpQLSedyWUMEMD_7cMBC_P78ssu_FtlbEAL-09cE18uvkLvDse8iQ/viewform?embedded=true',
   codeTemplate:false,

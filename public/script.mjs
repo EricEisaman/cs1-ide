@@ -226,13 +226,15 @@ IDE.save = function(){
             });
           }
 IDE.build = function(){
-            setLog('building remote project');
+            const prod = document.querySelector('.prod-box').checked;
+            const msg = (prod)?'Creating a production build of remote project. \n\nNOTE: production builds produce significantly smaller application bundles, but take significantly longer to build.':'Creating a development build of remote project.';
+            setLog(msg);
             if(IDE.building)return;
             console.log('calling remote build');
             IDE.building = true;
             $('.build-btn').html('');
             $('.save-btn').hide();
-            IDE.socket.emit('build',res=>{
+            IDE.socket.emit('build',prod,res=>{
               IDE.building = false;
               $('.build-btn').html('🔧');
               $('.save-btn').show();
@@ -272,7 +274,7 @@ myLayout.on( 'stackCreated', function( stack ){
         // interact with the contentItem
         if(stack.contentItems && stack.contentItems[0] && stack.contentItems[0].componentName=="code-editor"){
           
-          stack.header.controlsContainer.prepend( "<div class='build-btn' onclick='IDE.build()'>🔧</div><div class='save-btn' onclick='IDE.save()'>💾</div>" );
+          stack.header.controlsContainer.prepend( "<div class='prod-div'>production<input class='prod-box' type='checkbox' ></div><div class='build-btn' onclick='IDE.build()'>🔧</div><div class='save-btn' onclick='IDE.save()'>💾</div>" );
         }
     });
 

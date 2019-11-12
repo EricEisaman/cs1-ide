@@ -138,6 +138,20 @@ export const templates = {
   codeTemplate:false,
   saveTarget:'./src/core/components/vrui/page2.html'
 },
+  
+"Lesson 21: UI Menu1️⃣": {
+  lessonURL: 'https://docs.google.com/presentation/d/e/2PACX-1vTAeBE_K4v8udVlLD1xKMwad4EN5BGtN9p9Sn6LCc3QeDXwnRLE_1T_B7EU-d2a1sSaoYlFRRiDwDuj/embed?start=false&loop=false&delayms=60000',
+  quizURL: 'https://docs.google.com/forms/d/e/1FAIpQLSdUmvnqgSyieUjx-S4bFsR0wm8zzwAhDbr0yi91mSfA1SWhkg/viewform?embedded=true',
+  codeTemplate:false,
+  saveTarget:'./src/core/components/vrui/panels.html'
+},
+  
+"Lesson 22: UI Page4️⃣": {
+  lessonURL: 'https://docs.google.com/presentation/d/e/2PACX-1vT-0Ix5PCBf6oJka0DhKR3qUr8MLChkXpULHnvsVMj3jApI7aqXwGEh7F_3r6RRA8L1N1myGVXec668/embed?start=false&loop=false&delayms=60000',
+  quizURL: 'https://docs.google.com/forms/d/e/1FAIpQLSe5J2Ktp61LF5QmXvBSIqNOHqVBSz-RRihppmooAC5fPl5lwg/viewform?embedded=true',
+  codeTemplate:false,
+  saveTarget:'./src/core/components/vrui/page4.html'
+},
 
 
 

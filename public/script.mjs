@@ -277,6 +277,20 @@ myLayout.on( 'stackCreated', function( stack ){
           stack.header.controlsContainer.prepend( "<div class='prod-div'>production<input class='prod-box' type='checkbox' ></div><div class='build-btn' onclick='IDE.build()'>🔧</div><div class='save-btn' onclick='IDE.save()'>💾</div>" );
         }
     });
+  
+  if(stack.contentItems && stack.contentItems[0] && stack.contentItems[0].componentName=="code-editor"){
+    
+    stack
+		.header
+		.controlsContainer
+		.find( '.lm_maximise' ) //get the maximise icon
+		.click(function(){
+		  $('.prod-div').toggle();
+		});
+    
+    
+  }
+  
 
     /*
      * Accessing the container and updating its state

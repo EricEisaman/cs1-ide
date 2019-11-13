@@ -287,6 +287,7 @@ myLayout.on( 'stackCreated', function( stack ){
 
 $(window).resize(function () {
 myLayout.updateSize($(window).width(), $(window).height());
+editor.setSize('100%','100%');
 });
 
 

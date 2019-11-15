@@ -50,22 +50,15 @@ iframe{
   cursor: pointer;
 }
 
-.prod-div{
+.prod-btn{
   display:inline-block;
-  margin-top: 0px;
-  filter: invert(100%);
+  transform:scale(0.7);
+  margin-top: -3px;
+  filter: invert(0%);
   float: left;
-  max-zoom: 1.0;
+  color:yellow;
 }
-.prod-box{
-  display:inline-block;
-  filter: invert(100%);
-  margin-top: -11px;
-  margin-left: 5px;
-  max-zoom: 1.0;
-  float: right;
-}
-.prod-box:hover{
+.prod-btn:hover{
   cursor: pointer;
 }
 

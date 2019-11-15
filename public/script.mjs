@@ -226,7 +226,7 @@ IDE.save = function(){
             });
           }
 IDE.build = function(){
-            const prod = document.querySelector('.prod-box').checked;
+            const prod = (document.querySelector('.prod-btn').innerHTML=='🚢');
             const msg = (prod)?'Creating a production build of remote project. \n\nNOTE: production builds produce significantly smaller application bundles, but take significantly longer to build.':'Creating a development build of remote project.';
             setLog(msg);
             if(IDE.building)return;
@@ -246,6 +246,12 @@ IDE.build = function(){
                 console.log('error with remote build');
               }
             });
+          }
+
+IDE.toggleProd = function(){
+            const prod = (document.querySelector('.prod-btn').innerHTML=='🚢');
+            (prod)?document.querySelector('.prod-btn').innerHTML='🚧':document.querySelector('.prod-btn').innerHTML='🚢';
+  
           }
 
 function setLog(v){
@@ -274,22 +280,22 @@ myLayout.on( 'stackCreated', function( stack ){
         // interact with the contentItem
         if(stack.contentItems && stack.contentItems[0] && stack.contentItems[0].componentName=="code-editor"){
           
-          stack.header.controlsContainer.prepend( "<div class='prod-div'>production<input class='prod-box' type='checkbox' ></div><div class='build-btn' onclick='IDE.build()'>🔧</div><div class='save-btn' onclick='IDE.save()'>💾</div>" );
+          stack.header.controlsContainer.prepend( "<div class='prod-btn' onclick='IDE.toggleProd()'>🚧</div><div class='build-btn' onclick='IDE.build()'>🔧</div><div class='save-btn' onclick='IDE.save()'>💾</div>" );
         }
     });
   
-  if(stack.contentItems && stack.contentItems[0] && stack.contentItems[0].componentName=="code-editor"){
+//   if(stack.contentItems && stack.contentItems[0] && stack.contentItems[0].componentName=="code-editor"){
     
-    stack
-		.header
-		.controlsContainer
-		.find( '.lm_maximise' ) //get the maximise icon
-		.click(function(){
-		  $('.prod-div').toggle();
-		});
+//     stack
+// 		.header
+// 		.controlsContainer
+// 		.find( '.lm_maximise' ) //get the maximise icon
+// 		.click(function(){
+// 		  $('.prod-button').toggle();
+// 		});
     
     
-  }
+//   }
   
 
     /*

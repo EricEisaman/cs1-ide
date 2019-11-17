@@ -1,5 +1,5 @@
 ![](https://cdn.glitch.com/07af4e76-a723-4969-8e18-7d7bc9f153d8%2Fcs1_ide_logo_256.png?v=1568757168497)
-v0.0.21
+v0.0.22
 ___
 
 
@@ -21,8 +21,8 @@ ___
 - Customize the **name** of your base project remix.
 - Log into the **CS1 IDE** with your **base project remix name** and **ADMIN_KEY**.
 - Create your own lesson content and update **public/components/lessons/templates.mjs**.
-  - <a href="https://bit.ly/lesson-template" rel="noopener noreferer">Lesson Template</a> 
-  - <a href="https://bit.ly/ide-quiz-template" rel="noopener noreferer">Quiz Template</a> 
+  - <a href="https://bit.ly/lessons-templates" rel="noopener noreferer">Lessons Templates</a> 
+  - <a href="https://bit.ly/quizzes-templates" rel="noopener noreferer">Quizzes Templates</a> 
 
 ## Extended Language Support
 Although the **CS1 IDE** and **CS1 Game Engine** are written in **JavaScript**, plans are in the works for **Java** and **Python** language integration. These plans include a **Java Spark** based microservice project and **JSweet** transpiled client code project to eventually integrate into the **CS1 IDE** and talk to **CS1 Game Engine** projects.  Down the road this will enable students to learn with **Java** based lesson sets. In the same spirit I aim to design and build a **Python Flask** based microservice and **Transcrypt** based browser client so that students can use the **CS1 IDE** with **Python** based lesson sets.

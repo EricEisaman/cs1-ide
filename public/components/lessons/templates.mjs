@@ -139,7 +139,7 @@ export const templates = {
   saveTarget:'./src/core/components/vrui/page2.html'
 },
   
-"Lesson 21: UI Menu1️⃣": {
+"Lesson 21: UI 🗂️": {
   lessonURL: 'https://docs.google.com/presentation/d/e/2PACX-1vTAeBE_K4v8udVlLD1xKMwad4EN5BGtN9p9Sn6LCc3QeDXwnRLE_1T_B7EU-d2a1sSaoYlFRRiDwDuj/embed?start=false&loop=false&delayms=60000',
   quizURL: 'https://docs.google.com/forms/d/e/1FAIpQLSdUmvnqgSyieUjx-S4bFsR0wm8zzwAhDbr0yi91mSfA1SWhkg/viewform?embedded=true',
   codeTemplate:false,
@@ -151,6 +151,20 @@ export const templates = {
   quizURL: 'https://docs.google.com/forms/d/e/1FAIpQLSe5J2Ktp61LF5QmXvBSIqNOHqVBSz-RRihppmooAC5fPl5lwg/viewform?embedded=true',
   codeTemplate:false,
   saveTarget:'./src/core/components/vrui/page4.html'
+},
+  
+"Lesson 23: UI Page3️⃣": {
+  lessonURL: 'https://docs.google.com/presentation/d/e/2PACX-1vRH_0HTifUZDfqgeXsFcSfEVvt4fMOH5Kx5-7UXBMtz34WJIsHiAC_m6pmDE2qBQu-xh2QzEsJn0Z3q/embed?start=false&loop=false&delayms=60000',
+  quizURL:'https://docs.google.com/forms/d/e/1FAIpQLSdRvhpt0wy8aSkT1r2fNSD1GfuCavmRX5MMZ05gmOwmz8WUiQ/viewform?embedded=true',
+  codeTemplate:false,
+  saveTarget:'./src/core/components/vrui/page3.html'
+},
+  
+"Lesson 24: UI Controls🎬": {
+  lessonURL: 'https://docs.google.com/presentation/d/e/2PACX-1vRUyAYzm8zX_NffWVUEwAPJo5862AdBpFRD81P7i3eI4gWlzKVRYSYQct-oi8gy6bS9CbZ_K-r4W_KM/embed?start=false&loop=false&delayms=60000',
+  quizURL: 'https://docs.google.com/forms/d/e/1FAIpQLSfUsqw525CAEj-U7nd4zfdVkZkJJrtBVb8ZBNgpJQHhebMOSQ/viewform?embedded=true',
+  codeTemplate:false,
+  saveTarget:'./src/core/components/vrui/controls.js'
 },
 
 

@@ -232,12 +232,16 @@ ${d.message}
 
 
 adminkeyInput.addEventListener('keydown', e => {
- if (e.which == 13 && (projectInput.value.length > 0)) {
+ if (e.which == 13 && (projectInput.value.length > 0)  && (adminkeyInput.value.length > 0)) {
   login();
  }
 });
 
-loginBtn.addEventListener('click', login);
+loginBtn.addEventListener('click', e => {
+ if ((adminkeyInput.value.length > 0) && (projectInput.value.length > 0)) {
+  login();
+ }
+});
 
 
 

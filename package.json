@@ -1,6 +1,6 @@
 {
   "name": "cs1-ide",
-  "version": "0.0.23",
+  "version": "0.0.30",
   "description": "A first in computer science education.",
   "main": "server.js",
   "scripts": {

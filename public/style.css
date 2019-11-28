@@ -113,6 +113,18 @@ input{
   text-align: center; 
 }
 
+#form button {
+  position: relative;
+  display: block;
+  margin:0 auto;
+  margin-bottom:10px;
+  width:300px;
+  height:40px;
+  font-size:20px;
+  border-radius:5px;
+  text-align: center;
+}
+
 
 .content{
   margin-left:10px;
@@ -197,6 +209,11 @@ html, body{
   --hover: #d4fcbd;
 }
 
+#form .pulse {
+  --color: #3395D0;
+  --hover: #DB9890;
+}
+
 button {
   background: none;
   border: 2px solid;
@@ -215,6 +232,22 @@ button:hover, button:focus {
   border-color: var(--hover);
   color: #fff;
 }
+
+#loginbtn{
+  font-size:20px;
+  transition: all 2s;
+}
+
+#loginbtn:after{
+  font-size:30px;
+  transition: all 2s;
+}
+
+#loginbtn:active:after{
+  font-size:30px;
+  transition: 0s;
+}
+
 
 
 /* CONTROLS */
